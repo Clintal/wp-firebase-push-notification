@@ -64,8 +64,8 @@ if (!defined('ABSPATH')) {exit;}
 <?php if(get_option('stf_fcm_api')){ ?>
 <div>
     <h3>Test Notification</h3>
-    <p>Notification sent to device, have above setup Topic</p>
-    <a href="<?php echo admin_url('admin.php'); ?>?page=test_notification">Test Notification</a>
+    <p>Send a test notification. API Key and topic must be setup above. ⚠️ DANGER: do not use this in a production environment as your users will be spammed with a push notification!</p>
+    <a href="<?php echo admin_url('admin.php'); ?>?page=test_notification">Send Test Notification</a>
 </div>
 
 <?php
