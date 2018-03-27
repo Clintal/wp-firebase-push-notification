@@ -113,7 +113,7 @@ Class Firebase_Push_Notification
 
             if (!$published_at_least_once && get_option('fcm_disable') != 1) {
                 $published_at_least_once = true;
-                $this->fcm_notification($content);
+                $this->fcm_notification($content, (string) $post_id);
             }
 
             update_post_meta( $post_id, 'is_published', $published_at_least_once );
@@ -123,7 +123,7 @@ Class Firebase_Push_Notification
     function fcm_test_notification(){
         $content = 'Test Notification from FCM Plugin';
 
-        $result = $this->fcm_notification($content);
+        $result = $this->fcm_notification($content, '0');
 
         echo '<div class="row">';
         echo '<div><h2>Debug Information</h2>';
@@ -138,7 +138,7 @@ Class Firebase_Push_Notification
         echo '</div>';
     }
 
-    function fcm_notification($content){
+    function fcm_notification($content, $post_id){
         $topic =  "'".get_option('fcm_topic')."' in topics";
         $apiKey = get_option('stf_fcm_api');
         $url = 'https://fcm.googleapis.com/fcm/send';
@@ -146,11 +146,14 @@ Class Firebase_Push_Notification
             'Authorization: key=' . $apiKey,
             'Content-Type: application/json'
         );
-        $notification_data = array(    //// when application open then post field 'data' parameter work so 'message' and 'body' key should have same text or value
-            'message'           => $content
+        $notification_data = array(
+            // when application open then post field 'data' parameter work so 'message' and 'body' key should have same text or value
+            'message'           => $content,
+            'post_id'           => $post_id
         );
 
-        $notification = array(       //// when application close then post field 'notification' parameter work
+        $notification = array(
+            // when application close then post field 'notification' parameter work
             'body'  => $content,
             'sound' => 'default'
         );
