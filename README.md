@@ -30,9 +30,9 @@ Wordpress 3.6+
 
 ## Authors
 
-* sony7596
-* miraclewebssoft
-* reachbaljit
+* [sony7596](https://profiles.wordpress.org/sony7596)
+* [miraclewebssoft](https://profiles.wordpress.org/miraclewebssoft)
+* [reachbaljit](https://profiles.wordpress.org/reachbaljit)
 
 ## License
 

@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name:Wordpress Firebase Push Notification
-Description:Wordpress Firebase Push Notification
+Description:Notify your users of new posts with Firebase cloud messaging (FCM)
 Version:1
-Author:sony7596, miraclewebssoft, reach.baljit
+Author:sony7596, miraclewebssoft, reachbaljit
 Author URI:http://www.miraclewebsoft.com
 License:GPL2
 License URI:https://www.gnu.org/licenses/gpl-2.0.html
