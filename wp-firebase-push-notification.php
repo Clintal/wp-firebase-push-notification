@@ -161,7 +161,7 @@ Class Firebase_Push_Notification
         $post = array(
             'condition'         => $topic,
             'notification'      => $notification,
-            "content_available" => true,
+            "content_available" => false,
             'priority'          => 'high',
             'data'              => $notification_data
         );
